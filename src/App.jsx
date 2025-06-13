@@ -26,7 +26,7 @@ function App() {
   return (
   <BrowserRouter>
       <header>
-      <nav>
+      <nav> 
         <Link to="/">#VANLIFE</Link>
         <Link to="/about">About</Link>
       </nav>
