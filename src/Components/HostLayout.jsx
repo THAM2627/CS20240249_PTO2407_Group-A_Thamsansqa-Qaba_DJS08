@@ -8,7 +8,7 @@ function HostLayout(){
         color: "#161616"
     }
     return(
-        <div>
+        <>
             <nav className="host-nav">
                 <NavLink
                     to="/host"
@@ -41,7 +41,7 @@ function HostLayout(){
 
             </nav>
             <Outlet />
-        </div>
+        </>
     )
 }
 
