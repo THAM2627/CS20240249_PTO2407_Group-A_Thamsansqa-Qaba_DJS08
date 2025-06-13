@@ -1,7 +1,7 @@
 import React from "react";
 import{Link, Outlet} from "react-router-dom"
 
-export default function HostLayout(){
+function HostLayout(){
     const activeStyles = {
         fontWeight: "bold",
         textDecoration: "underline",
@@ -44,3 +44,5 @@ export default function HostLayout(){
         </div>
     )
 }
+
+export default HostLayout

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function Header() {
+function Header() {
     const activeStyles = {
         fontWeight: "bold",
         color: "#161616",
@@ -33,3 +33,5 @@ export default function Header() {
     </header>
     );
 }
+
+export default Header

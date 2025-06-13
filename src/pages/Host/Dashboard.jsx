@@ -1,7 +1,7 @@
 import React from "react";
 import { Outlet } from "react-router";
 
-export default function Dashboard() {
+function Dashboard() {
     return (
         <div>
         <h1>Dashboard</h1>
@@ -9,3 +9,5 @@ export default function Dashboard() {
         </div>
     )
 }
+
+export default Dashboard

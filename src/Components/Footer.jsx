@@ -1,9 +1,11 @@
 import React from "react";
 
-export default function Footer() {
+function Footer() {
     return (
         <footer>
         <p>© 2023 #VANLIFE</p>
         </footer>
     );
 }
+
+export default Footer
