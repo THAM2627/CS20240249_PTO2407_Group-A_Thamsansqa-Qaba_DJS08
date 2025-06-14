@@ -42,6 +42,7 @@ function HostVanDetail() {
             relative="path"
             className="back-button"
         >&larr; <span>Back to all vans</span></Link>
+        {currentVan&&
 
         <div className="host-van-detail-layout-container">
         <div className="host-van-detail">
@@ -78,7 +79,7 @@ function HostVanDetail() {
                     </NavLink>
                 </nav>
                 <Outlet context={{ currentVan }} />
-            </div>
+            </div>}
         </section>
     )
 }
