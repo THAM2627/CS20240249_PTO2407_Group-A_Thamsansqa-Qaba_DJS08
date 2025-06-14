@@ -11,7 +11,7 @@ export default function Vans() {
 
     const displayedVans = typeFilter ? vans.filter(van => van.type === typeFilter) : vans
 
-    const vanElements = displayedVansv.map(van => (
+    const vanElements = displayedVans.map(van => (
         <div key={van.id} className="van-tile">
         <Link to={`/vans/${van.id}`} className="van-link">
         <img src={van.imageUrl} />
@@ -23,6 +23,17 @@ export default function Vans() {
             </Link>
             </div>
     ))
+
+    function handleFilterChange(key,value) {
+        setSearchParams(prevParams => {
+            if (value === null) {
+                prevParams.delete(key)
+            } else {
+                prevParams.set(key, value)
+            }
+            return prevParams
+        })
+    }
 
     return (
         <div className="van-list-container">
