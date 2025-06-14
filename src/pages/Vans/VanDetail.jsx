@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 
 export default function VanDetail() {
     const params = useParams();
+    const location = useLocation();
     const [van, setVan] = React.useState(null)
 
     React.useEffect(() => {
@@ -10,6 +11,8 @@ export default function VanDetail() {
         .then(res => res.json())
         .then(data => setVan(data.van))
     }, [params.id])
+
+    const search = location.search?.search||""
 
     return (
         <div className="van-detail-container">
