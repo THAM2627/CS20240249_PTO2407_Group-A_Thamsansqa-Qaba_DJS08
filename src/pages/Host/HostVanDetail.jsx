@@ -1,8 +1,11 @@
 import React from "react";
 import { useParams, Link, NavLink, Outlet } from "react-router-dom";
+import { getHostVans } from "../../api";
 
 function HostVanDetail() {
+    const {loading, setLoading} = React.useState(null)
     const { id } = useParams()
+    const [error, setError] = React.useState(null)
     const [currentVan, setCurrentVan] = React.useState(null)
 
     const activeStyles = {
@@ -12,10 +15,19 @@ function HostVanDetail() {
     }
 
     React.useEffect(() => {
-        fetch(`/api/host/vans/${id}`)
-        .then(res => res.json())
-        .then(data => setCurrentVan(data.van))
-    }, [])
+     async function loadVans() {
+         setLoading(true)
+         try{
+            const data = await getHostVans(id)
+            setCurrentVan(data)
+         } catch (err) {
+            setError(err)
+         } finally {
+            setLoading(false)
+         }
+     }
+     loadVans()
+    }, [id])
 
     if (!currentVan) {
         return (
