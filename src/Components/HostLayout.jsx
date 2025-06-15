@@ -1,5 +1,6 @@
 import React from "react";
 import{Link, Outlet} from "react-router-dom"
+import {NavLink} from "react-router-dom"
 
 function HostLayout(){
     const activeStyles = {

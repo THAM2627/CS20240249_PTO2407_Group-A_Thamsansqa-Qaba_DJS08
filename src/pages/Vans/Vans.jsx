@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { getVans } from "../../api";
+import { useSearchParams } from "react-router-dom";
 
 function Vans() {
     const[searchParams, setSearchParams] = useSearchParams()
