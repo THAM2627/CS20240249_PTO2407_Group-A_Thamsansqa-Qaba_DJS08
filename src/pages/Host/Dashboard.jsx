@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import {getHostVans} from "../../api"
+import {getVan} from "../../api"
 import { BsStarFill } from "react-icons/bs"
 
 
