@@ -90,6 +90,6 @@ return(
         </section>
 
     </>
-)
+)}}
 
 export default Dashboard
