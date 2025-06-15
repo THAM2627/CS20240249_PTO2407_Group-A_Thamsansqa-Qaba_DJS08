@@ -13,3 +13,5 @@ function HostVanInfo() {
         </section>
     )
 }
+
+export default HostVanInfo
