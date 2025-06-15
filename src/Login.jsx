@@ -10,12 +10,14 @@ export default function Login() {
     const location = useLocation()
     const navigate = useNavigate()
 
+    const from = location.state?.from?.pathname || "/host"
+
     function handleSubmit(e) {
         e.preventDefault()
         setStatus("submitting")
         loginUser(loginFormData)
         .then (data => {
-            .setError(null)
+            setError(null)
             localStorage.setItem("loggedin", true)
             navigate("/host", { replace: true})
         })
