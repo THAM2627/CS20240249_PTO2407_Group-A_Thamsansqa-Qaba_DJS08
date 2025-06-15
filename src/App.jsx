@@ -15,8 +15,8 @@
  */
 import React from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import Home from "./pages/Home";
-import About from "./pages/About";
+import Home from "./Home";
+import About from "./About";
 import Vans from "./pages/Vans/Vans";
 import VanDetail from "./pages/Vans/VanDetail";
 import Layout from './Components/Layout';
@@ -31,7 +31,7 @@ import HostVans from './pages/Host/HostVans';
 import HostVanInfo from './pages/Host/HostVanInfo';
 import HostVanPricing from './pages/Host/HostVanPricing';
 import HostVanPhotos from './pages/Host/HostVanPhotos';
-import NotFound from './pages/NotFound';
+import NotFound from './NotFound';
 
 function App() {
 
