@@ -8,7 +8,6 @@ function Dashboard() {
     const [vans, setVans] = React.useState([])
     const [loading, setLoading] = React.useState(false)
     const [error, setError] = React.useState(null)
-
     React.useEffect(); {
         setLoading(true)
         getHostVans()
@@ -32,7 +31,9 @@ function Dashboard() {
                 <p>${van.price}/day</p>
             </div>
             <Link to={`/host/vans/${van.id}`}>View Van </Link>
+            </div>
     ))
+
     return (
         <div className="host-vans-list">
             <section>
@@ -40,6 +41,7 @@ function Dashboard() {
             </section>
         </div>
     )
+ }
 
 
 if (error) { 
@@ -55,13 +57,38 @@ return(
             <p>Last 30 days</p>
             <h2>$2,260</h2>
         </div>
+        <Link to ="income">Details</Link>
+        </section>
 
-        <div className="reviews">
-            <h2>Reviews</h2>
-            <div className="star">
-                <BsStarFill />
-    </div>
-    </section>
+        <section className="Host-dashboard-reviews">
+            <h2>Review Score</h2>
+            <BsStarFill className="star" />
+
+            <p>
+                <span>5.0</span>/5
+            </p>
+            <Link to="reviews">Details</Link>
+        </section>
+
+        <section className="host-dashboard-vans">
+            <div className="top">
+                <h2>Your listed vans</h2>
+                <Link to="vans">View all</Link>
+            </div>
+       
+
+        {
+            loading && !vans
+            ? <h1>Loading...</h1>
+            : (
+                <>
+                    {renderVanElements(vans)}
+                </>
+            )
+        }
+
+        </section>
+
     </>
 )
 
